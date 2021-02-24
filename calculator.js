@@ -1,11 +1,9 @@
-
-//islem isaretini lutfen string deger olarak girelim!!
+//HESAP MAKİNESİ İŞLEMLERİ
 
 function hesapMakinesi(sayi1, sayi2, islemIsareti){
-
     
     if( isNaN(sayi1) || isNaN(sayi2 )) 
-    console.log('Lütfen bir sayı giriniz!!');
+    console.log('LÜTFEN BİR SAYI GİRİNİZ. !!!');
     else{
         if ( islemIsareti == '+'){
             let sonuc = {
@@ -34,28 +32,25 @@ function hesapMakinesi(sayi1, sayi2, islemIsareti){
                  return sonuc;
             }
         
-        else if ( islemisareti == '/'){
+        else if ( islemIsareti == '/'){
        
-                 if(sayi2==0) console.log('ikinci sayi sifira esit.Bu yuzden sonuc belirsizdir');
-                 else {
-                    let sonuc = {
-                      islemsonucu:  sayi1/sayi2,
-                      secim: 'bolme'
+            if(sayi2==0) console.log('İKİNCİ SAYI SIFIR OLDUĞU İÇİN SONUÇ ÇIKMAMAKTADIR.');
+              else {
+                let sonuc = {
+                    islemsonucu:  sayi1/sayi2,
+                    secim: 'bolme'
             
-                             }
+                    }
                  return sonuc;
             }
           }
     
-        else console.log('boyle bir islem bulunamadi!!');
+        else console.log('İŞLEM YAPILAMADI !!!');
     }
     
-    }
-    const islemler = hesapMakinesi("[]", "[]", "[]");
+  }
+    const islemler = hesapMakinesi(12, 8, "+");
         
     console.log(islemler);
-    //input = sayi1();
-    //input = sayi2();
-    //input = islemIsareti();
 
-    
+  
