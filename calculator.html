@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesap Makinası</title>
-    
-    <style>
-        var (birSayi, ikiSayi, sonucIslem);
-    
-    </style>
-
+    <title>Hesap Makinası</title>   
 </head>
+
 <body>
     <script src="calculator.js" async defer></script>
     <div>
@@ -24,10 +19,11 @@
 
     <div>
         <ul>
-            <button type="button" onclick="birSayi+ikiSayi"> TOPLA (+)</button>
-            <button type="button" onclick=function cıkar"> CIKAR (-)</button>
-            <button type="button" onclick=function (bölme)> BÖLME (/)</button>
-            <button type="button" onclick=function (carpma)> CARPMA (*)</button>
+            <button type="button" onclick=sonuc:sayi1+sayi2> TOPLA (+)</button>
+            <button type="button" onclick=sonuc:sayi1-sayi2> CIKAR (-)</button>
+            <button type="button" onclick=sonuc:sayi1/sayi2> BÖLME (/)</button>
+            <button type="button" onclick=sonuc:sayi1*sayi2> CARPMA (*)</button><br><br>
+            <textarea name="sonuc" id="sonuc" cols="30" rows="1"></textarea>
         </ul>
         
 

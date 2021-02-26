@@ -2,7 +2,7 @@
 
 function hesapMakinesi(sayi1, sayi2, islemIsareti){
     
-    if( isNaN(sayi1) || isNaN(sayi2 )) 
+    if( isNaN(sayi1) || isNaN(sayi2)) 
     console.log('LÜTFEN BİR SAYI GİRİNİZ. !!!');
     else{
         if ( islemIsareti == '+'){
