@@ -71,6 +71,34 @@ return sonuc;
 console.log (calc (5, 0, '+'));
 
 
+const method2=() => {
+    console.log('ikinci method');
+}
+
+
+
+
 // BİR JS DOSYASINI DIŞARI AKTARIP KULLANMAK İÇİN module.expors kullanılır. 
 //Bunu başka bir js dosyasında kullanabilir.
-module.exports=calc;
+module.exports.calc=calc;
+
+//ikinci methodu aynı zamanda paylaşmak için 
+module.exports.method2=method2
+
+//bir objeyide paylaşabiliriz. obj şeklinde bir objemiz olsun. bunun paylaşımı alttadır.
+const obj= {
+    adi: 'Mahmut',
+    yasi: '23;'
+}
+
+module.exports.obj=obj;
+
+//HEPSİNİ TOPLUCA DA PAYLAŞABİLİRİZ.
+module.exports = {
+calc:calc,
+method2:method2,
+obj:obj,
+
+}
+
+
