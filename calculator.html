@@ -4,28 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesap Makinası</title>   
+    <title>Hesap Makinası</title> 
+    <style>
+        label{
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>  
 </head>
 
 <body>
-    <script src="calculator.js" async defer></script>
-    <div>
-        <label for="sayi1">Birinci Sayı</label>
-        <input type="number" name=sayi1>
-        <label for="sayi2">İkinci Sayı</label>
-        <input type="number" name=sayi2>
+
+    <form>
+        <label>Birinci Sayı :
+            <input type="text" id="s1">           
+        </label>
+
+        <label>İkinci Sayı  : 
+            <input type="text" id="s2">            
+        </label>
+
+        <input type="button" value="Toplama" id="hesap">
         
+    </form>
+    
+    <div 
+        id=sonuc> 
     </div>
 
-    <div>
-        <ul>
-            <button type="button" onclick=sonuc:sayi1+sayi2> TOPLA (+)</button>
-            <button type="button" onclick=sonuc:sayi1-sayi2> CIKAR (-)</button>
-            <button type="button" onclick=sonuc:sayi1/sayi2> BÖLME (/)</button>
-            <button type="button" onclick=sonuc:sayi1*sayi2> CARPMA (*)</button><br><br>
-            <textarea name="sonuc" id="sonuc" cols="30" rows="1"></textarea>
-        </ul>   
 
-    </div>
+    <script>
+            var sayi1=document.getElementById("s1");
+            var sayi2=document.getElementById("s2");
+            var hesapBtn=document.getElementById("hesap");
+            var sonuc=document.getElementById ("sonuc");
+
+            hesapbtn.onclick=function(){
+                var toplam= Number(sayi1.value) + Number(sayi2.value);
+                sonuc.innerHTML=toplam;
+            }
+    </script>
 </body>
 </html>
