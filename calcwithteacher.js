@@ -1,104 +1,93 @@
- //ŞAYET YAN CİZGİ / SONRA ** YAZARSANIZ PARAMETRELER GELİR.
- /**
-  * 
-  * @param {Number} num1 
-  * @param {Number} num2 
-  * @param {String*} op 
-  * @returns () {String*} op
-  * 
-  */
-
-const calc=(num1, num2, op) =>{
+/**
+ *  calc metodu
+ * @param {Number} num1 
+ * @param {Number} num2 
+ * @param {String} op 
+ * 
+ * @returns {Object} 
+ */
+const calc = (num1, num2, op) => {
     let sonuc = {
-        islemSonucu:'',
-        hata:[]
-
+        islemSonucu: '',
+        hata: []
     };
 
-    //HATALAR NELER OLABİLİR. SAYI YERİNE STRING GİRİLMİŞ Mİ?
-
-    if(typeof num1 !== 'number' || typeof num2 !== "number"){
-        sonuc.hata.push('Lütfen sayı giriniz!!');
-        sonuc.islemSonucu ='Hata';
+    // sayi yerine string girilmis mi
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+        sonuc.hata.push('Lütfen sayi giriniz!!');
+        sonuc.islemSonucu = 'Hata';
     }
 
-    //BÖLME İŞLEMİNDE İKİNCİ SAYI SIFIR OLAMAZ.
-    if (op == '/' && num2==0){
-        sonuc.hata.push('Bölme işleminde ikinci sayı sıfır olamaz!!');
-        sonuc.islemSonucu ='Hata';
-
+    // bölme isleminde ikinci sayi sifir olamaz
+    if (op == '/' && num2 == 0) {
+        sonuc.hata.push('Bölme isleminde ikinci sayi sifir olamaz!!')
+        sonuc.islemSonucu = 'Hata';
     }
 
-    //op +,-,*,/ HARİCİNDE İSE HATA VER
-    if(['+','-', '*', '/'].indexOf(op)==-1){
-        sonuc.hata.push('Kullanıcı Hatası!!');
-        sonuc.islemSonucu ='Hata';
-
+    // op +,-,*,/ haricinde ise hata ver
+    if (['+', '-', '*', '/'].indexOf(op) == -1) {
+        sonuc.hata.push('Operatör hatasi')
+        sonuc.islemSonucu = 'Hata';
     }
 
-
-
-    if(sonuc.hata.lengh ==0){
+    if (sonuc.hata.length == 0) {
         let islem = 0;
 
-        switch (op){
+        switch (op) {
             case '+':
                 islem = num1 + num2;
                 break;
             case '-':
-                islem = num1- num2
+                islem = num1 - num2;
                 break;
             case '*':
                 islem = num1 * num2;
                 break;
             case '/':
-                islem = num1 + num2;
+                islem = num1 / num2;
                 break;
+
             default:
-                islem=0;
+                islem = 0;
                 break;
-            
         }
-    
-    sonuc.islemSonucu = islem;
-    delete sonuc.hata
-        
+
+        sonuc.islemSonucu = islem;
+        delete sonuc.hata;
+    }
+
+    return sonuc;
+    // return ['sonuc', 'hata'];
 }
-return sonuc;
 
-}
+// Object.prototype arastirabilirsiniz
 
-console.log (calc (5, 0, '+'));
+// console.log(calc(5, 2, '/'));
 
-
-const method2=() => {
+const method2 = () => {
     console.log('ikinci method');
 }
 
-
-
-
-// BİR JS DOSYASINI DIŞARI AKTARIP KULLANMAK İÇİN module.expors kullanılır. 
-//Bunu başka bir js dosyasında kullanabilir.
-module.exports.calc=calc;
-
-//ikinci methodu aynı zamanda paylaşmak için 
-module.exports.method2=method2
-
-//bir objeyide paylaşabiliriz. obj şeklinde bir objemiz olsun. bunun paylaşımı alttadır.
-const obj= {
+const obj = {
     adi: 'Mahmut',
-    yasi: '23;'
+    yasi: 23
 }
 
-module.exports.obj=obj;
 
-//HEPSİNİ TOPLUCA DA PAYLAŞABİLİRİZ.
+// module.exports.calc = calc;
+// module.exports.method2 = method2;
+// module.exports.obj = obj;
+
+// module.exports = {
+//     calc: calc,
+//     method2: method2,
+//     obj: obj
+// }
+
 module.exports = {
-calc:calc,
-method2:method2,
-obj:obj,
-
+    calc,
+    method2,
+    obj
 }
 
 
