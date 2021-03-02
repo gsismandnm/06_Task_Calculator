@@ -74,7 +74,7 @@ const obj = {
 }
 
 
-// module.exports.calc = calc;
+module.exports.calc = calc;
 // module.exports.method2 = method2;
 // module.exports.obj = obj;
 
